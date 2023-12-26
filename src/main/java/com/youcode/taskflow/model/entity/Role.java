@@ -2,16 +2,14 @@ package com.youcode.taskflow.model.entity;
 
 import com.youcode.taskflow.model.enums.UserRole;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

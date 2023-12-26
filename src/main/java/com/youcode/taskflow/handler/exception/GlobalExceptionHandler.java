@@ -27,12 +27,11 @@ public class GlobalExceptionHandler {
 
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<?> handleValidationExceptions(MethodArgumentNotValidException ex) {
+    public ResponseEntity<Map<String, List<String>>> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, List<String>> errors = ex.getBindingResult()
                 .getFieldErrors()
                 .stream()
                 .collect(Collectors.groupingBy(FieldError::getField, Collectors.mapping(FieldError::getDefaultMessage, Collectors.toList())));
-
         return ResponseEntity.badRequest().body(errors);
     }
 

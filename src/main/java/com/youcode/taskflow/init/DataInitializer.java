@@ -5,7 +5,6 @@ import com.youcode.taskflow.model.enums.UserRole;
 import com.youcode.taskflow.repository.RoleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 @Component
 public class DataInitializer implements CommandLineRunner {
     private final RoleRepository roleRepository;
