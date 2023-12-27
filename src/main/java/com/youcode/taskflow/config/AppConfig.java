@@ -18,14 +18,14 @@ public class AppConfig {
         this.userRepository = userRepository;
     }
     @Bean
-    public UserDetailsService userEmailDetailsService() {
-        return email -> (UserDetails) userRepository.findByUserEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found: " + email));
+    public UserDetailsService userDetailsService() {
+        return username -> (UserDetails) userRepository.findByUserEmail(username)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found: " + username));
     }
     @Bean
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userEmailDetailsService());
+        authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
