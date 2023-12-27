@@ -12,7 +12,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
-
   liquibase:
     enabled: true
     change-log: classpath:db/master.xml

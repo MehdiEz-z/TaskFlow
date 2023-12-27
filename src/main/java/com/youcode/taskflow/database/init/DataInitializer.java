@@ -1,5 +1,4 @@
-package com.youcode.taskflow.init;
-
+package com.youcode.taskflow.database.init;
 import com.youcode.taskflow.model.entity.Role;
 import com.youcode.taskflow.model.enums.UserRole;
 import com.youcode.taskflow.repository.RoleRepository;
@@ -13,7 +12,9 @@ public class DataInitializer implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception {
-        initRoles();
+        if (roleRepository.count() == 0) {
+            initRoles();
+        }
     }
     private void initRoles() {
         for (UserRole role : UserRole.values()) {

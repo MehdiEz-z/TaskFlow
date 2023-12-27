@@ -37,12 +37,10 @@
         <addUniqueConstraint columnNames="user_name" constraintName="uc_user_username" tableName="user"/>
     </changeSet>
     <changeSet id="1703587538038-5" author="Youcode (generated)">
-        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_roles" constraintName="fk_userol_on_role"
-                                 referencedColumnNames="id" referencedTableName="role"/>
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_roles" constraintName="fk_userol_on_role" referencedColumnNames="id" referencedTableName="role"/>
     </changeSet>
     <changeSet id="1703587538038-6" author="Youcode (generated)">
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_roles" constraintName="fk_userol_on_user"
                                  referencedColumnNames="id" referencedTableName="user"/>
     </changeSet>
-
 </databaseChangeLog>

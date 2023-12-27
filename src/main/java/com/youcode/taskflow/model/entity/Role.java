@@ -1,9 +1,7 @@
 package com.youcode.taskflow.model.entity;
-
 import com.youcode.taskflow.model.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
